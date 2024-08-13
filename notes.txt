@@ -1,0 +1,8 @@
+Computer Choice:
+
+1 check if number is <= .333
+2 if yes, value = rock
+3 if no, check if number is <= .666
+4 if yes, value = paper
+5 if no, value = scissors
+6 print value to console
