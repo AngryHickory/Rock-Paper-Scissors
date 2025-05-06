@@ -50,11 +50,13 @@ function getComputerChoice() {
     }
   }
 
-  
+  //Event Listeners:
+  document.getElementById("rock").addEventListener("click", () => playRound("Rock"));
+  document.getElementById("paper").addEventListener("click", () => playRound("Paper"));
+  document.getElementById("scissors").addEventListener("click", () => playRound("Scissors"));
 
   //Play Game:
   function playGame() {
-    for (let i = 0; i < 5; i++) {
       const humanChoice = getHumanChoice();
       console.log("You chose:", humanChoice);
         
@@ -67,7 +69,7 @@ function getComputerChoice() {
       console.log("The score is: ", humanScore, "to", computerScore);
 
       
-    }
+    
     console.log("The Final Score is:");
     console.log("You:", humanScore, "Computer:", computerScore);
     console.log("Refresh to play again!");
