@@ -3,21 +3,6 @@ console.log("Rock, Paper, Scissors Game!");
 let humanScore = 0;
 let computerScore = 0;
 
-// Human Choice:
-function getHumanChoice() {
-    const options = ["Rock", "Paper", "Scissors"];
-    const humanChoice = prompt("Rock, Paper, Scissors?").toLowerCase();
-    if (humanChoice === "rock") {
-        return options[0];
-    } else if (humanChoice === "paper") {
-        return options[1];
-    } else if (humanChoice === "scissors") {
-        return options[2];
-    } else {
-        console.log("Invalid choice. Please enter Rock, Paper, or Scissors.");
-        return getHumanChoice()
-    }
-  }
 
 
 //Computer Choice:
@@ -51,30 +36,33 @@ function getComputerChoice() {
   }
 
   //Event Listeners:
-  document.getElementById("rock").addEventListener("click", () => playRound("Rock"));
-  document.getElementById("paper").addEventListener("click", () => playRound("Paper"));
-  document.getElementById("scissors").addEventListener("click", () => playRound("Scissors"));
+  document.getElementById("rock").addEventListener("click", () => playGame("Rock"));
+  document.getElementById("paper").addEventListener("click", () => playGame("Paper"));
+  document.getElementById("scissors").addEventListener("click", () => playGame("Scissors"));
 
   //Play Game:
-  function playGame() {
-      const humanChoice = getHumanChoice();
-      console.log("You chose:", humanChoice);
-        
+  function playGame(humanChoice) {
+      
       const computerChoice = getComputerChoice();
-      console.log("Computer chose:", computerChoice);
+      document.getElementById("humanChoice").textContent = "You chose: " + humanChoice;
+      document.getElementById("computerChoice").textContent = "Computer chose: " + computerChoice;
         
       const roundResult = playRound(humanChoice, computerChoice);
-      console.log(roundResult); 
+      document.getElementById("roundResult").textContent = roundResult;
       
-      console.log("The score is: ", humanScore, "to", computerScore);
+      document.getElementById("score").textContent = "The score is: You " + humanScore + " to Computer " + computerScore;
 
-      
-    
-    console.log("The Final Score is:");
-    console.log("You:", humanScore, "Computer:", computerScore);
-    console.log("Refresh to play again!");
+      if (humanScore === 5) {
+        document.getElementById("finalScore").textContent = "You win the game!";
+        document.getElementById("refreshMessage").textContent = "Refresh to play again!";
+    } else if (computerScore === 5) {
+        document.getElementById("finalScore").textContent = "Computer wins the game!";
+        document.getElementById("refreshMessage").textContent = "Refresh to play again!";
+    } else {
+        document.getElementById("finalScore").textContent = "";
+    }
   }
 
   
 
-  playGame();
+  
