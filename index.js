@@ -50,7 +50,7 @@ function getComputerChoice() {
       const roundResult = playRound(humanChoice, computerChoice);
       document.getElementById("roundResult").textContent = roundResult;
       
-      document.getElementById("score").textContent = "The score is: You " + humanScore + " to Computer " + computerScore;
+      document.getElementById("score").textContent = "The score is: You =  " + humanScore + " to Computer =  " + computerScore;
 
       if (humanScore === 5) {
         document.getElementById("finalScore").textContent = "You win the game!";
