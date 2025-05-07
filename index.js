@@ -40,6 +40,14 @@ function getComputerChoice() {
   document.getElementById("paper").addEventListener("click", () => playGame("Paper"));
   document.getElementById("scissors").addEventListener("click", () => playGame("Scissors"));
 
+  document.addEventListener('DOMContentLoaded', () => {
+    const refreshButton = document.getElementById('refresh');
+  
+    refreshButton.addEventListener('click', () => {
+      location.reload();
+    });
+  });
+
   //Play Game:
   function playGame(humanChoice) {
       
