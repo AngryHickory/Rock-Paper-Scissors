@@ -64,6 +64,13 @@ button:hover {
     background: linear-gradient(135deg, #bb491c, #832c06);
 }
 
+@media (hover: none) {
+    button:hover {
+      transform: none; /* Reset the transform */
+      background: #04AA6D; /* Revert to the original background color */
+    }
+  }
+
 button:active {
     top: 2px;
     background: linear-gradient(135deg, #aa901a, #e4d509);
