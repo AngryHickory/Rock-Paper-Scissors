@@ -90,3 +90,11 @@ img {
     height: auto;
     margin-bottom: 20px;
 }
+
+#finalScore {
+    color: red;
+}
+
+#refreshMessage {
+    color: rgb(52, 30, 219, 0.5);
+}

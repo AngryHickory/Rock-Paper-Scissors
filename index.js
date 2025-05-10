@@ -65,7 +65,7 @@ function getComputerChoice() {
         document.getElementById("refreshMessage").textContent = "Refresh to play again!";
     } else if (computerScore === 5) {
         document.getElementById("finalScore").textContent = "Computer wins the game!";
-        document.getElementById("refreshMessage").textContent = "Refresh to play again!";
+        document.getElementById("refreshMessage").textContent = "Press New Game to play again!";
     } else {
         document.getElementById("finalScore").textContent = "";
     }
